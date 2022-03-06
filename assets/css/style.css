@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+/*## Colors
+### Primary*/
+--desaturatedRed: hsl(0, 36%, 70%);
+--softRed: hsl(0, 93%, 68%);
+/*### Neutral*/
+--darkGrayishRed: hsl(0, 6%, 24%);
+/*### Gradients*/
+--gradient1: to right, 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+--gradient2: to right, 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Josefin Sans';
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    
+}
+
+main {
+    max-width: 1440px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto 650px;
+    grid-template-rows: auto;
+    padding: 0;
+    background-image: url('../images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+}
+
+header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-top: 65px;
+    margin-left: 160px;
+    height: 50px;
+    background-color: transparent;
+}
+
+section {
+    width: auto;
+    padding: 10px;
+    padding-right: 0;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section h1 {
+    color: var(--desaturatedRed);
+    font-weight: 300;
+    font-size: 65px;
+    text-transform: uppercase;
+    margin-top: 110px;
+    margin-left: 155px;
+    letter-spacing: 17px;
+}
+
+section h2 {
+    font-weight: 600;
+    font-size: 65px;
+    text-transform: uppercase;
+    letter-spacing: 16.5px;
+    line-height: 1.08;
+    margin-left: 155px;
+}
+
+section span {
+    color: var(--desaturatedRed);
+    margin-top: 20px;
+    line-height: 1.7;
+    letter-spacing: .05px;
+    margin-left: 155px;
+    padding-right: 225px;
+}
+
+section .newsletter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 39px;
+    margin-left: 155px;
+    margin-bottom: 70px;
+}
+
+section .newsletter .newsletter-input {
+    display: flex;
+}
+
+section .newsletter .newsletter-input input {
+    flex: 1;
+    font-size: 15px;
+    border: 1px solid rgba(65, 58, 58, 0.3);
+    border-radius: 30px;
+    padding: 10px 30px;
+    margin-right: 290px;
+    background-color: transparent;
+    outline: 0;
+}
+
+section .newsletter input::placeholder {
+    color: var(--desaturatedRed);
+    opacity: 0.5;
+}
+
+section .newsletter .arrow {
+    padding: 19px 45px;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 390px;
+    cursor: pointer;
+}
+
+section .newsletter .arrow:hover {
+    background: hsl(0, 80%, 86%);
+    box-shadow: 0 10px 15px rgb(200, 150, 150);
+}
+
+section .newsletter .error {
+    visibility: hidden;
+    position: relative;
+    right: 430px;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+}
+
+aside {
+    grid-column: 2 /3;
+    grid-row: 1/3;
+    margin-right: 0;
+    padding-right: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/hero-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fake {
+    color: var(--softRed);
+    font-size: 13px;
+    margin-left: 30px;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+@media(max-width:800px) {
+    main {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: auto;
+        background-image: none;
+    }
+
+    header {
+        padding-top: 30px;
+        margin-left: 30px;
+    }
+
+    header img {
+        width: 100px;
+    }
+
+    section {
+        grid-row: 4/5;
+        text-align: center;
+        padding: 0;
+        width: 320px;
+        margin: auto;
+    }
+
+    section h1 {
+        margin-top: 51px;
+        margin-left: 0;
+        font-size: 42px;
+        text-align: center;
+        letter-spacing: 9px;
+    }
+
+    section h2 {
+        width: 300px;
+        font-size: 40px;
+        margin: auto;
+        text-align: center;
+        letter-spacing: 10px;
+    }
+
+    section span {
+        margin-left: 0;
+        padding-right: 0;
+        margin: auto;
+        width: 310px;
+        font-size: 14px;
+        letter-spacing: 0;
+        text-align: center;
+        margin-top: 15px;
+        line-height: 1.5;
+    }
+
+    section .newsletter {
+        width: 320px;
+        padding: 0;
+    }
+
+    section .newsletter .newsletter-input #email {
+        margin-right: 50px;
+        width: 100%;
+        margin-left: -170px; 
+        padding: 9px 0 9px 40px;
+        font-size: 14px;
+    }
+
+    section .newsletter .newsletter-input .error {
+        right: 170px;
+        width: 25px;
+        height: 25px;
+    }
+
+    section .newsletter .newsletter-input .arrow {
+        right: 145px;
+        padding: 15px 30px;
+    }
+
+    aside {
+        width: 100%;
+        height: 250px;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        background-image: url('../images/hero-mobile.jpg');
+        background-size: contain;
+        background-position: center;
+        margin-top: 35px;
+    }
+
+    .fake {
+        margin-left: -50px;
+    }
+}
